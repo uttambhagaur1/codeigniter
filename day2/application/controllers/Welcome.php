@@ -26,8 +26,9 @@ class Welcome extends CI_Controller {
 		$this->load->view('home',$data);
 	}
 	public function save(){
-		if(isset($_POST)){
-			$this->load->model('home');
-		}
+		$this->load->model('home');
+		$this->home->save();
+		$success = 'data uploaded';
+		$this->load->view('home',compact('success'));
 	}
 }

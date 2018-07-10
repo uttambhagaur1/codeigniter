@@ -10,7 +10,22 @@
 <div class="container">
 	<div class="row">
 		<div class="col-sm-6 offset-sm-2">
-			<?php form_open('welcome/save') ?>
+			<?php if(isset($success)){ echo $success;} ?>
+			<?php echo form_open('welcome/save') ?>
+			<div class="form-group">
+			<label for="name">Name:</label>
+			<input type="text" id="name" name="name" />
+			<label for="address">Address:</label>
+			<input type="text" id="address" name="address" />
+			<label for="city">City:</label>
+			<input type="text" id="city" name="city" />
+			<label for="state">State:</label>
+			<input type="text" id="state" name="state" />
+			<label for="zip">ZIP:</label>
+			<input type="text" id="zip" name="zip" />
+			<input type="submit" name="submit" value="add">
+		</div>
+			<?php echo form_close(); ?>
 		</div>
 	</div>
 	<div class="row">
